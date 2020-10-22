@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+For this next project, we are going to look at a dataset regarding credit card default and create a model that can analyze the most important factors of what causes a credit card holder to default as well as using that model to predict any future defaults. We will once again use supervised machine learning, but since we are dealing with a dependant variable that only takes discreet variables, we are going to utilize a binary logistic regression instead of the typical linear regression model. Our dataset consists of 30,0000 observations of Taiwanaese residents from a period of 6 months, from April 2005 to September 2005. The dataset was taken from Kaggle.com
+```{r}
+uciset <- read.csv("Uci_credit_card.csv")
+head(uciset)
+dim(uciset)
+```
+Of course before starting any data analsysis, we want to take a look at our data, specifically the variables and see what type of features we are dealing with. 
+
+```{r}
+summary(uciset)
+```
+
+We have mostly numerical values, with some being continuous and some being discrete. Some of the variables, such as Sex and Education may need to be transformed into factors. We can also look at the plots and see how the data is distributed amongst each other. 
+```{r}
+plot(uciset)
+```
+
